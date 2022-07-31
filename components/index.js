@@ -1,3 +1,3 @@
 import Layout from "./com/Layout";
-
-export { Layout };
+import Feeds from "./com/Feeds";
+export { Layout, Feeds };
