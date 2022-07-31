@@ -33,7 +33,7 @@ export default function Navbar() {
         </div>
 
         <div className="right sm:flex-row items-center flex-row-reverse flex gap-3">
-          <IconButton color="inherit" className="xs:flex hidden">
+          <IconButton color="inherit" className="sm:flex hidden">
             <HomeOutlinedIcon />
           </IconButton>
           <IconButton color="inherit">
@@ -63,10 +63,10 @@ export default function Navbar() {
           <IconButton color="inherit">
             <AddBoxOutlinedIcon />
           </IconButton>
-          <IconButton color="inherit" className="xs:flex hidden">
+          <IconButton color="inherit" className="sm:flex hidden">
             <FavoriteBorderOutlinedIcon />
           </IconButton>
-          <IconButton color="inherit" className="xs:flex hidden">
+          <IconButton color="inherit" className="sm:flex hidden">
             <ExploreOutlinedIcon />
           </IconButton>
         </div>
