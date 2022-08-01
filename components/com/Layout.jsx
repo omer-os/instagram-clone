@@ -1,4 +1,5 @@
 import React from "react";
+import MobilesBottomNav from "./MobilesBottomNav";
 import Navbar from "./Navbar";
 
 export default function Layout({ children }) {
@@ -6,6 +7,7 @@ export default function Layout({ children }) {
     <div>
       <Navbar />
       {children}
+      <MobilesBottomNav />
     </div>
   );
 }
