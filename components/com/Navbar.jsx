@@ -11,8 +11,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export default function Navbar() {
   return (
-    <div className="flex sticky top-0 left-0 justify-center items-center  z-50 bg-white p-3
-    ">
+    <div
+      className="flex sticky top-0 left-0 justify-center items-center  z-50 bg-white p-3
+    "
+    >
       <div className="innerNavbar w-full max-w-[50em] flex  justify-between items-center ">
         <div className="left relative object-cover w-24 h-10">
           <Image src="/text_logo.png" layout="fill" alt="logo" />
@@ -34,9 +36,12 @@ export default function Navbar() {
         </div>
 
         <div className="right sm:flex-row items-center flex-row-reverse flex gap-3">
-          <IconButton color="inherit" className="sm:flex hidden">
-            <HomeOutlinedIcon />
-          </IconButton>
+          <div className="sm:flex hidden">
+            <IconButton color="inherit">
+              <HomeOutlinedIcon />
+            </IconButton>
+          </div>
+
           <IconButton color="inherit">
             <svg
               aria-label="Messenger"
@@ -64,12 +69,16 @@ export default function Navbar() {
           <IconButton color="inherit">
             <AddBoxOutlinedIcon />
           </IconButton>
-          <IconButton color="inherit" className="sm:flex hidden">
-            <FavoriteBorderOutlinedIcon />
-          </IconButton>
-          <IconButton color="inherit" className="sm:flex hidden">
-            <ExploreOutlinedIcon />
-          </IconButton>
+          <div className="sm:flex hidden">
+            <IconButton color="inherit">
+              <FavoriteBorderOutlinedIcon />
+            </IconButton>
+          </div>
+          <div className="sm:flex hidden">
+            <IconButton color="inherit">
+              <ExploreOutlinedIcon />
+            </IconButton>
+          </div>
         </div>
       </div>
     </div>

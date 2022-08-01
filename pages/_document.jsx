@@ -10,6 +10,7 @@ export default function Document() {
         <link rel="shortcut icon" href="/insta-logo.webp" />
         <link rel="apple-touch-icon" href="/insta-logo.webp" />
         <link rel="icon" href="/insta-logo.webp" />
+        <meta name="theme-color" content="#000000" />
       </Head>
       <body>
         <Main />

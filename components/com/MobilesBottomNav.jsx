@@ -21,21 +21,34 @@ export default function MobilesBottomNav() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction sx={{
-            "minWidth":"1em"
-        }} icon={<HomeRoundedIcon />} />
-        <BottomNavigationAction sx={{
-            "minWidth":"1em"
-        }} icon={<SearchRoundedIcon />} />
-        <BottomNavigationAction sx={{
-            "minWidth":"1em"
-        }} icon={<MovieFilterOutlinedIcon />} />
-        <BottomNavigationAction sx={{
-            "minWidth":"1em"
-        }} icon={<FavoriteBorderOutlinedIcon />} />
-        <BottomNavigationAction sx={{
-            "minWidth":"1em"
-        }}
+        <BottomNavigationAction
+          sx={{
+            minWidth: "1em",
+          }}
+          icon={<HomeRoundedIcon />}
+        />
+        <BottomNavigationAction
+          sx={{
+            minWidth: "1em",
+          }}
+          icon={<SearchRoundedIcon />}
+        />
+        <BottomNavigationAction
+          sx={{
+            minWidth: "1em",
+          }}
+          icon={<MovieFilterOutlinedIcon />}
+        />
+        <BottomNavigationAction
+          sx={{
+            minWidth: "1em",
+          }}
+          icon={<FavoriteBorderOutlinedIcon />}
+        />
+        <BottomNavigationAction
+          sx={{
+            minWidth: "1em",
+          }}
           icon={
             <Avatar
               src="https://images.unsplash.com/photo-1659332395153-a33f9c4cc74e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
