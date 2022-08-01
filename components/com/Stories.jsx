@@ -18,7 +18,7 @@ export default function Stories() {
   return (
     <motion.div
       ref={StoryConRef}
-      className="box rounded-md border border-gray-300 overflow-hidden cursor-grab relative active:cursor-grabbing"
+      className="box sm:rounded-md border border-gray-300 overflow-hidden cursor-grab relative active:cursor-grabbing"
     >
       <motion.div
         drag="x"

@@ -22,19 +22,19 @@ export default function MobilesBottomNav() {
         }}
       >
         <BottomNavigationAction sx={{
-            "min-width":"1em"
+            "minWidth":"1em"
         }} icon={<HomeRoundedIcon />} />
         <BottomNavigationAction sx={{
-            "min-width":"1em"
+            "minWidth":"1em"
         }} icon={<SearchRoundedIcon />} />
         <BottomNavigationAction sx={{
-            "min-width":"1em"
+            "minWidth":"1em"
         }} icon={<MovieFilterOutlinedIcon />} />
         <BottomNavigationAction sx={{
-            "min-width":"1em"
+            "minWidth":"1em"
         }} icon={<FavoriteBorderOutlinedIcon />} />
         <BottomNavigationAction sx={{
-            "min-width":"1em"
+            "minWidth":"1em"
         }}
           icon={
             <Avatar
