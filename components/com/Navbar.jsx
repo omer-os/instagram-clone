@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
-import { IconButton } from "@mui/material";
+import { IconButton, List, ListItemButton } from "@mui/material";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
@@ -8,16 +8,22 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 export default function Navbar() {
+  const [OpenDialog, setOpenDialog] = useState(false);
   return (
-    <div
-      className="flex sticky top-0 left-0 justify-center items-center  z-50 bg-white p-3
-    "
-    >
+    <div className="flex sticky top-0 left-0 justify-center items-center  z-50 bg-white p-3 ">
       <div className="innerNavbar w-full max-w-[50em] flex  justify-between items-center ">
         <div className="left relative object-cover w-24 h-10">
-          <Image src="/text_logo.png" layout="fill" alt="logo" />
+          <Image
+            src="/text_logo.png"
+            layout="fill"
+            alt="logo"
+            onClick={() => {
+              setOpenDialog(!OpenDialog);
+            }}
+          />
           <KeyboardArrowDownIcon className="absolute top-2 -right-5" />
         </div>
 
@@ -81,6 +87,26 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {OpenDialog && <TopLeftDialog setOpenDialog={setOpenDialog} />}
+      </AnimatePresence>
     </div>
   );
 }
+
+const TopLeftDialog = ({ setOpenDialog }) => {
+  return (
+    <div className="fixed top-0 left-0 w-screen h-screen z-[999]">
+      <List className="bg-white relative top-14 z-50 left-4 rounded w-max">
+        <ListItemButton>Following</ListItemButton>
+        <ListItemButton>Favorates</ListItemButton>
+      </List>
+      <div
+        onClick={() => {
+          setOpenDialog(false);
+        }}
+        className="h-screen w-screen fixed top-0 left-0 bg-black/20 z-10"
+      />
+    </div>
+  );
+};
