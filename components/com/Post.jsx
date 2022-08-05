@@ -14,12 +14,19 @@ import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 
 export default function Post({ post }) {
   const ScrollImages = useRef();
   const ScrollLeft = useRef();
   const ScrollRight = useRef();
   const [OpenDialog, setOpenDialog] = useState(false);
+  const [ShowComment, setShowComment] = useState(true);
+  const [Liked, setLiked] = useState(false);
 
   useEffect(() => {
     ScrollImages.current.scrollLeft = 0;
@@ -83,16 +90,53 @@ export default function Post({ post }) {
               </div>
             ))}
           </div>
-          <div className="right-2 absolute -translate-y-[50%] top-[50%] z-30">
+          <div className="right-2 absolute sm:flex hidden -translate-y-[50%] top-[50%] z-30">
             <IconButton ref={ScrollLeft} color="inherit">
               <ArrowCircleRightRoundedIcon sx={{ fill: "white" }} />
             </IconButton>
           </div>
-          <div className="left-2 absolute -translate-y-[50%] top-[50%] z-30">
+          <div className="left-2 absolute sm:flex hidden -translate-y-[50%] top-[50%] z-30">
             <IconButton ref={ScrollRight} color="inherit">
               <ArrowCircleLeftIcon sx={{ fill: "white" }} />
             </IconButton>
           </div>
+        </div>
+
+        <div className="flex items-center pt-2 px-3 py-2  justify-between">
+          <div className="flex gap-3 items-center">
+            <SendOutlinedIcon className="active:scale-[.7] transition-all" />
+            <ChatBubbleOutlineOutlinedIcon className="active:scale-[.7] transition-all" />
+            <BookmarkBorderIcon className="active:scale-[.7] transition-all" />
+          </div>
+          <div className="left" onClick={() => setLiked(!Liked)}>
+            {Liked ? (
+              <FavoriteOutlinedIcon
+                className="active:scale-[.7] transition-all"
+                sx={{ fill: "red" }}
+              />
+            ) : (
+              <FavoriteBorderOutlinedIcon className="active:scale-[.7] transition-all" />
+            )}
+          </div>
+        </div>
+
+        <div className="flex px-3 flex-col">
+          <div className="font-bold text-lg">4,405 likes</div>
+          <div className="flex text-sm">
+            <div
+              className="
+            text-gray-800 
+            line-clamp-2 "
+            >
+              <span className="font-bold text-black">lorem aika </span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              eligendi labore culpa et assumenda a, necessitatibus temporibus
+              vel quis vitae? Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Neque eligendi labore culpa et assumenda a, necessitatibus
+              temporibus vel quis vitae?
+            </div>
+          </div>
+          <div className="text-gray-400">view all 9 comments</div>
         </div>
       </div>
 
@@ -104,8 +148,6 @@ export default function Post({ post }) {
 }
 
 const MyDialog = ({ setOpenDialog }) => {
-  
-  
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-[999] flex items-center justify-center">
       <motion.div

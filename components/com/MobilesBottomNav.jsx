@@ -8,9 +8,11 @@ import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import MovieFilterOutlinedIcon from "@mui/icons-material/MovieFilterOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function MobilesBottomNav() {
   const [value, setValue] = useState(0);
+  const router = useRouter();
 
   return (
     <div className="fixed bottom-0 left-0 right-0 sm:hidden">
@@ -26,24 +28,28 @@ export default function MobilesBottomNav() {
             minWidth: "1em",
           }}
           icon={<HomeRoundedIcon />}
+          onClick={() => router.push("/")}
         />
         <BottomNavigationAction
           sx={{
             minWidth: "1em",
           }}
           icon={<SearchRoundedIcon />}
+          onClick={() => router.push("/search")}
         />
         <BottomNavigationAction
           sx={{
             minWidth: "1em",
           }}
           icon={<MovieFilterOutlinedIcon />}
+          onClick={() => router.push("/movies")}
         />
         <BottomNavigationAction
           sx={{
             minWidth: "1em",
           }}
           icon={<FavoriteBorderOutlinedIcon />}
+          onClick={() => router.push("/favorites")}
         />
         <BottomNavigationAction
           sx={{
@@ -58,6 +64,7 @@ export default function MobilesBottomNav() {
               }}
             />
           }
+          onClick={() => router.push("/profile")}
         />
       </BottomNavigation>
     </div>

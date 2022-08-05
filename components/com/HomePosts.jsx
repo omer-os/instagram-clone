@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Post from "./Post";
 import { v4 as uuidv4 } from "uuid";
 

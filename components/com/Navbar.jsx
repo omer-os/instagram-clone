@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Navbar() {
   const [OpenDialog, setOpenDialog] = useState(false);
   return (
-    <div className="flex sticky top-0 left-0 justify-center items-center  z-50 bg-white p-3 ">
+    <div className="flex sticky top-0 left-0 justify-center items-center border-b z-50 bg-white p-3 ">
       <div className="innerNavbar w-full max-w-[50em] flex  justify-between items-center ">
         <div className="left relative object-cover w-24 h-10">
           <Image
